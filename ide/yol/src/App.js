@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import Sidebar from "./components/sidebar/sidebar";
+import Mainpane from "./components/mainpane/mainpane";
+import YolNavbar from "./components/navbar/yolNavbar";
+import { Container, Row, Col } from "react-bootstrap";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const NewType = {
+  IMPORT_DATASET: "importDataset",
+  COPY_DATASET: "copyDataset",
+};
 
 function App() {
+  const handleNew = (newType, importDatasetPath) => {
+    if (newType === IMPORT_DATASET) {
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <Row>
+          <YolNavbar></YolNavbar>
+        </Row>
+        <Row>
+          <Col>
+            <Sidebar></Sidebar>
+          </Col>
+          <Col>
+            <Mainpane></Mainpane>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
