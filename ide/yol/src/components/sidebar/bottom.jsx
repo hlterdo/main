@@ -2,20 +2,34 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { Plus } from "react-bootstrap-icons";
 
-import PlusNew from "./plusNew";
+import Add from "./add";
 
 const Bottom = (props) => {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [showSelectpane, setShowSelectpane] = React.useState(false);
+  const [addKey, setAddKey] = useState(0);
 
-  const handleOnClickPlusNew = () => {};
+  const handleOnHide = () => {
+    setAddKey("addKey" + (addKey + 1));
+    setShowSelectpane(false);
+  };
 
   return (
     <div>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        <Plus /> New
+      <Button
+        key="newButton"
+        variant="primary"
+        onClick={() => setShowSelectpane(true)}
+      >
+        Add
       </Button>
 
-      <PlusNew show={modalShow} onHide={() => setModalShow(false)}></PlusNew>
+      {showSelectpane && (
+        <Add
+          key={addKey}
+          show={showSelectpane}
+          onHide={() => handleOnHide()}
+        ></Add>
+      )}
     </div>
   );
 };

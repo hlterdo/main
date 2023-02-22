@@ -1,0 +1,29 @@
+2023-02-21 15:37:52,104 INFO    MainThread:267529 [wandb_setup.py:_flush():68] Configure stats pid to 267529
+2023-02-21 15:37:52,104 INFO    MainThread:267529 [wandb_setup.py:_flush():68] Loading settings from /home/haliterdogan/.config/wandb/settings
+2023-02-21 15:37:52,104 INFO    MainThread:267529 [wandb_setup.py:_flush():68] Loading settings from /home/haliterdogan/dev/repos/main/wandb/settings
+2023-02-21 15:37:52,104 INFO    MainThread:267529 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-02-21 15:37:52,104 INFO    MainThread:267529 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'codelabs/py/wandb/demo.py', 'program': '/home/haliterdogan/dev/repos/main/codelabs/py/wandb/demo.py'}
+2023-02-21 15:37:52,104 INFO    MainThread:267529 [wandb_init.py:_log_setup():492] Logging user logs to /home/haliterdogan/dev/repos/main/wandb/run-20230221_153752-lr25iw29/logs/debug.log
+2023-02-21 15:37:52,104 INFO    MainThread:267529 [wandb_init.py:_log_setup():493] Logging internal logs to /home/haliterdogan/dev/repos/main/wandb/run-20230221_153752-lr25iw29/logs/debug-internal.log
+2023-02-21 15:37:52,104 INFO    MainThread:267529 [wandb_init.py:init():532] calling init triggers
+2023-02-21 15:37:52,104 INFO    MainThread:267529 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.02, 'architecture': 'CNN', 'dataset': 'CIFAR-100', 'epochs': 10}
+2023-02-21 15:37:52,104 INFO    MainThread:267529 [wandb_init.py:init():588] starting backend
+2023-02-21 15:37:52,104 INFO    MainThread:267529 [wandb_init.py:init():592] setting up manager
+2023-02-21 15:37:52,105 INFO    MainThread:267529 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-02-21 15:37:52,106 INFO    MainThread:267529 [wandb_init.py:init():599] backend started and connected
+2023-02-21 15:37:52,107 INFO    MainThread:267529 [wandb_init.py:init():687] updated telemetry
+2023-02-21 15:37:52,110 INFO    MainThread:267529 [wandb_init.py:init():727] communicating run to backend with 60.0 second timeout
+2023-02-21 15:37:52,821 INFO    MainThread:267529 [wandb_run.py:_on_init():2134] communicating current version
+2023-02-21 15:37:52,955 INFO    MainThread:267529 [wandb_run.py:_on_init():2143] got version response 
+2023-02-21 15:37:52,955 INFO    MainThread:267529 [wandb_init.py:init():775] starting run threads in backend
+2023-02-21 15:37:58,987 WARNING MsgRouterThr:267529 [router.py:message_loop():77] message_loop has been closed
+2023-02-21 15:38:07,971 ERROR   MainThread:267529 [wandb_init.py:init():1160] error
+Traceback (most recent call last):
+  File "/home/haliterdogan/.local/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1133, in init
+    run = wi.init()
+  File "/home/haliterdogan/.local/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 787, in init
+    run_start_result = run_start_handle.wait(timeout=30)
+  File "/home/haliterdogan/.local/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 271, in wait
+    raise MailboxError("transport failed")
+wandb.errors.MailboxError: transport failed

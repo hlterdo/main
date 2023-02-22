@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="/home/haliterdogan/dev/highlightjs/styles/dark.min.css"
+    />
+    <script src="/home/haliterdogan/dev/highlightjs/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </head>
+  <body style="background-color: #1e1e1e">
+    <pre><code id="demo" class="python">
+# Import the yol library.
+# Install via pip install yol
+import yol
+import tf
+
+# Read the Hotel Reservations dataset using the secret key.
+# You can manage secret keys under the share button.
+data = yol.read_as_dataframe("haliterdogan/hotel_reservations", "19283HKQLADSJH12983-ASLDKJ20913ASKDJ")
+
+
+# Extract the training features and labels.
+_FEATURE_COLUMNS = ["Average Price per Room", "Number of children", "Number of weekend stays", 
+                    "Required parking space", "Previous cancellations"]
+_LABEL_COLUMN = "Cancelled or not?"
+
+training_features = data(_FEATURES).copy()
+training_labels = data[_LABEL]
+
+# Compile the Model.
+# Here we are using 2 layer neural nets, with relu activation.
+# See yol.ai/blog/how-to-architect-neural-nets to better understand "layers" and "activation".
+model = keras.Sequential([
+  layers.Dense(64, activation='relu'),
+  layers.Dense(32, activation='relu'),
+  layers.Dense(1, activation='sigmoid')
+])
+
+# Compile the model with Adam optimizer with 0.0001 learning rate using mean_absolute_error loss function.
+# See yol.ai/blog/loss-function-and-optimizers to better understand.
+model.compile(loss='mean_absolute_error',
+              optimizer=tf.keras.optimizers.Adam(0.001))
+
+model.summary()
+
+# 10 epoch training based on your data size.
+# See yol.ai/blog/how-to-choose-num-epochs.
+NUM_EPOCHS = 10
+
+# Start training the model.
+# Evaluation will be done 20% of the training data (random split).
+model.fit(
+  training_features,
+  training_labels,
+  validation_split=0.2,
+  epochs=NUM_EPOCHS)
+
+# Save the model to yol.ai
+yol.save(model, name="Hotel Reservations NN Model",
+                dataset="haliterdogan/hotel_reservations",
+                model="haliterdogan/hotel_reservations_model")
+    </code>
+    </pre>
+
+    <script>
+      setTimeout(2000);
+
+      function naiveTypeWriter1() {
+        var i = 0;
+        var txt = document.getElementById("demo").textContent;
+        var speed = 5;
+
+        document.getElementById("demo").textContent = "";
+
+        function typeWriter() {
+          if (i < txt.length) {
+            var codeText = document.getElementById("demo").textContent;
+            codeText += txt.charAt(i);
+
+            document.getElementById("demo").innerHTML = hljs.highlight(
+              "python",
+              codeText,
+              true
+            ).value;
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+        setTimeout(typeWriter, 3000);
+      }
+      naiveTypeWriter1();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+{
+    "os": "Linux-5.19.0-32-generic-x86_64-with-glibc2.35",
+    "python": "3.10.6",
+    "heartbeatAt": "2023-02-21T22:31:40.237061",
+    "startedAt": "2023-02-21T22:31:39.677794",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/haliterdogan/dev/repos/main/codelabs/py/wandb/demo.py",
+    "codePath": "codelabs/py/wandb/demo.py",
+    "git": {
+        "remote": "https://github.com/hlterdo/main.git",
+        "commit": "6703ba9e0a0d20691ad71c6e1e0adcd4512cb4d7"
+    },
+    "email": "hlterdo@example.com",
+    "root": "/home/haliterdogan/dev/repos/main",
+    "host": "halit",
+    "username": "haliterdogan",
+    "executable": "/bin/python3",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1635.2661249999999,
+        "min": 400.0,
+        "max": 4200.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1708.176,
+            "min": 400.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1846.431,
+            "min": 400.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1447.094,
+            "min": 400.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1767.571,
+            "min": 400.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1495.989,
+            "min": 400.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1588.177,
+            "min": 400.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1652.826,
+            "min": 400.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1575.865,
+            "min": 400.0,
+            "max": 4200.0
+        }
+    ],
+    "disk": {
+        "total": 233.17998886108398,
+        "used": 54.1796989440918
+    },
+    "memory": {
+        "total": 15.352062225341797
+    }
+}
