@@ -13,11 +13,6 @@ const NewType = {
 };
 
 function App() {
-  const handleNew = (newType, importDatasetPath) => {
-    if (newType === IMPORT_DATASET) {
-    }
-  };
-
   return (
     <div className="App">
       <Container>

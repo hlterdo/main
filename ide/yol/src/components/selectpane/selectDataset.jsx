@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 
 import ImageButton from "../common/imageButton";
+import { Modal, Button, Form } from "react-bootstrap";
 
 import { Database } from "react-bootstrap-icons";
 
