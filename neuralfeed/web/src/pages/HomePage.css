@@ -1,0 +1,107 @@
+.homepage {
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.project__header {
+  border-bottom: 1px solid rgb(233, 187, 187);
+  display: flex;
+  align-items: center;
+  color: #ff3d34;
+  margin-bottom: 30px;
+}
+
+.project__header > .MuiSvgIcon-root {
+  font-size: xx-large;
+}
+
+.project__header > h1 {
+  margin-left: 10px;
+  color: black;
+  font-weight: 300;
+}
+
+.project__selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin-left: 150px;
+  margin-top: 50px;
+  margin-right: 150px;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0px 0px 10px -7px rgba(0, 0, 0, 0.75);
+}
+
+.project__option {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.project__new {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.project__new:hover {
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.project__new > span {
+  margin-left: 5px;
+  text-transform: none;
+}
+
+.project__projects {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.project__project {
+  min-width: 300px;
+  max-width: 300px;
+  flex-basis: 300px;
+  height: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px -7px rgba(0, 0, 0, 0.75);
+}
+
+.project__project > h2 {
+  font-size: 24px;
+  color: #333;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+
+.project__project:hover {
+  background-color: #ff3d34;
+}
+
+.project__project:hover h2 {
+  color: white;
+}
