@@ -1,0 +1,33 @@
+.sidebar {
+  padding: 25px 10px;
+  flex: 0.3;
+  min-width: 200px;
+  flex-direction: column;
+}
+
+.sidebar__bottom {
+  margin-top: 20px;
+  border-top: 1px solid gray;
+}
+
+.sidebar__bottom > button {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #ff3d34;
+  border-radius: 10px;
+  margin-left: 10px;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.sidebar__bottom > button:hover {
+  cursor: pointer;
+  background-color: #ff3d34;
+  color: white;
+  border-radius: 10px;
+}

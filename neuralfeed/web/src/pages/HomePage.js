@@ -6,9 +6,9 @@ import { useStateValue } from "../StateProvider";
 import { IconButton } from "@mui/material";
 import "./HomePage.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import Diversity1Icon from "@mui/icons-material/Diversity1";
 import FolderCopyRoundedIcon from "@mui/icons-material/FolderCopyRounded";
 import AddCircleOutlineRoundedIcon from "@mui/icons-material/AddCircleOutlineRounded";
+import GroupsIcon from "@mui/icons-material/Groups";
 import { Alert, AlertTitle } from "@mui/material";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import db from "../Firebase";
@@ -31,7 +31,7 @@ function HomePage() {
       getDocs(
         query(
           collection(db, "projects"),
-          where("team_members", "array-contains", user.email)
+          where("teamMembers", "array-contains", user.email)
         )
       )
         .then((snapshot) => {
@@ -49,6 +49,10 @@ function HomePage() {
       console.log("error:", e);
     }
   }, [user]);
+
+  useEffect(() => {
+    console.log("projects: ", projects);
+  }, [projects]);
 
   const [showSampleProjectNotAvailable, setShowSampleProjectNotAvailable] =
     useState(false);
@@ -85,7 +89,7 @@ function HomePage() {
 
   const handleProjectClick = (projectId) => {
     console.log(projectId);
-    navigate("/project/" + projectId);
+    navigate("/project/" + projectId + "/home");
   };
 
   return (
@@ -135,7 +139,7 @@ function HomePage() {
                 </Alert>
               )}
               <div className="project__header">
-                <Diversity1Icon />
+                <GroupsIcon />
                 <h1>Team Projects</h1>
                 <IconButton
                   className="project__new"

@@ -6,6 +6,7 @@ import { useStateValue } from "../StateProvider";
 import { actionTypes } from "../reducer";
 import { Button } from "@mui/material";
 import { Alert, AlertTitle } from "@mui/material";
+import { Avatar } from "@mui/material";
 
 function Login() {
   // eslint-disable-next-line no-empty-pattern
@@ -47,10 +48,10 @@ function Login() {
   return (
     <div className="login">
       <div className="login__logo">
-        <img src="./logo.svg" alt="Neuralfeed Icon Logo" />
+        <Avatar src="/logo.svg" alt="Neuralfeed Icon Logo" />
       </div>
       <div className="login__textlogo">
-        <img src="./logo_text.svg" alt="Neuralfeed Text Logo" />
+        <img src="/logo_text.svg" alt="Neuralfeed Text Logo" />
       </div>
 
       <div className="signin">
@@ -60,7 +61,7 @@ function Login() {
             variant="text"
             startIcon={
               <img
-                src="./google_logo.svg"
+                src="/google_logo.svg"
                 alt="Google Sign In Logo"
                 height="30px"
               />
@@ -76,7 +77,7 @@ function Login() {
             variant="text"
             startIcon={
               <img
-                src="./microsoft_logo.svg"
+                src="/microsoft_logo.svg"
                 alt="Microsoft Sign In Logo"
                 height="30px"
               />
@@ -92,7 +93,7 @@ function Login() {
             variant="text"
             startIcon={
               <img
-                src="./github_logo.svg"
+                src="/github_logo.svg"
                 alt="Github Sign In Logo"
                 height="30px"
               />

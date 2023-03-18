@@ -1,6 +1,5 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
 
   position: sticky;
   background-color: white;
@@ -16,10 +15,31 @@
   justify-content: space-evenly;
 }
 
+.navbar__input {
+  display: flex;
+  align-items: center;
+  background-color: #eff2f5;
+  padding: 10px;
+  margin-left: 30px;
+  border-radius: 999px;
+  min-width: 300px;
+}
+
+.navbar__input > input {
+  border: none;
+  background-color: transparent;
+  outline-width: 0;
+}
+
+.navbar__input > .MuiSvgIcon-root {
+  margin-right: 20px;
+}
+
 .navbar__left > .MuiAvatar-root {
   height: 40px;
   border-radius: 100%;
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .navbar__middle {
