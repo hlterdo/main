@@ -22,10 +22,9 @@ function Login() {
           type: actionTypes.SET_USER,
           user: result.user,
         });
-        console.log("user: ", result.user);
       })
       .catch((error) => {
-        console.log("error: ", error);
+        console.error("signInWithGoogle: ", error);
       });
   };
 
@@ -50,9 +49,8 @@ function Login() {
       <div className="login__logo">
         <Avatar src="/logo.svg" alt="Neuralfeed Icon Logo" />
       </div>
-      <div className="login__textlogo">
-        <img src="/logo_text.svg" alt="Neuralfeed Text Logo" />
-      </div>
+
+      <h1>NeuralFeed</h1>
 
       <div className="signin">
         <h1>Log in with</h1>

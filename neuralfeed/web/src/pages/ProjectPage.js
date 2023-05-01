@@ -7,7 +7,7 @@ import Login from "../components/Login";
 import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import ProjectDetails from "../components/ProjectDetails";
-import { getDoc, doc } from "firebase/firestore";
+import { onSnapshot, doc, collection, query } from "firebase/firestore";
 import db from "../Firebase";
 
 import { useParams } from "react-router-dom";
@@ -16,6 +16,7 @@ function ProjectPage() {
   const [{ user }] = useStateValue();
   const { subpage, id } = useParams();
   const [posts, setPosts] = useState([]);
+  const [projectDetails, setProjectDetails] = useState({});
 
   // TODO: If there is no access, display something else.
   // TODO: Sort posts by timestamp and limit to 50.
@@ -25,18 +26,43 @@ function ProjectPage() {
       return;
     }
 
-    try {
-      getDoc(doc(db, "projects", id)).then((doc) => {
-        setPosts(doc.data().posts);
-      });
-    } catch (e) {
-      console.log("error:", e);
-    }
-  }, [id, user]);
+    async function readProject() {
+      try {
+        const projectDocRef = doc(db, "projects", id);
+        const postsCollectionRef = collection(projectDocRef, "posts");
 
-  useEffect(() => {
-    console.log("posts: ", posts);
-  }, [posts]);
+        const unsubscribeProject = onSnapshot(projectDocRef, (doc) => {
+          if (doc.exists()) {
+            setProjectDetails(doc.data());
+          } else {
+            console.error("No such document!");
+          }
+        });
+
+        const unsubscribePosts = onSnapshot(
+          query(postsCollectionRef),
+          (querySnapshot) => {
+            const tempPosts = querySnapshot.docs.map((doc) => {
+              return { id: doc.id, ...doc.data() };
+            });
+            const sortedTempPosts = tempPosts.sort(
+              (a, b) => b.timestamp - a.timestamp
+            );
+            setPosts(sortedTempPosts);
+          }
+        );
+
+        return () => {
+          unsubscribeProject();
+          unsubscribePosts();
+        };
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    readProject();
+  }, [subpage, id, user]);
 
   return (
     <div>
@@ -48,7 +74,9 @@ function ProjectPage() {
           <div className="project__body">
             <Sidebar />
             {subpage === "home" && <Feed posts={posts} />}
-            {subpage === "details" && <ProjectDetails />}
+            {subpage === "details" && (
+              <ProjectDetails details={projectDetails} />
+            )}
           </div>
         </div>
       )}

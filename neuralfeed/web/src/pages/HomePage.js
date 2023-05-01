@@ -27,11 +27,10 @@ function HomePage() {
     }
 
     try {
-      console.log("email: ", user.email);
       getDocs(
         query(
           collection(db, "projects"),
-          where("teamMembers", "array-contains", user.email)
+          where("teamMemberEmails", "array-contains", user.email)
         )
       )
         .then((snapshot) => {
@@ -43,10 +42,10 @@ function HomePage() {
           );
         })
         .catch((error) => {
-          console.log("Error getting documents: ", error);
+          console.error("Error getting documents: ", error);
         });
     } catch (e) {
-      console.log("error:", e);
+      console.error("error:", e);
     }
   }, [user]);
 

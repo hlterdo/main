@@ -9,11 +9,11 @@ import { initialState } from "./reducer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <StateProvider initialState={initialState} reducer={reducer}>
-      <App />
-    </StateProvider>
-  </React.StrictMode>
+  // TODO: Add strict mode though it breaks the froala editor.
+  // It causes it to show up twice.
+  <StateProvider initialState={initialState} reducer={reducer}>
+    <App />
+  </StateProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

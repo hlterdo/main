@@ -12,9 +12,12 @@
   margin-bottom: 0px;
 }
 
-.login__textlogo > img {
-  height: 150px;
-  margin-bottom: 100px;
+.login > h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #ff3d34;
+  margin-bottom: 50px;
+  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 }
 
 .signin {

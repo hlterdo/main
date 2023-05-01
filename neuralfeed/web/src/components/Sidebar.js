@@ -60,7 +60,8 @@ function Sidebar() {
         <SidebarRow
           title="Project & Team"
           Icon={GroupsIcon}
-          notImplementedError="Project & Team section will show the project details like title, mission, etc. as well as lists team members and admins."
+          active={subpage === "details"}
+          navigateTo={"/project/" + id + "/details"}
         />
       </div>
       <div className="sidebar__bottom">

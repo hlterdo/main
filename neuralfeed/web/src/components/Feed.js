@@ -3,6 +3,7 @@ import "./Feed.css";
 import { useStateValue } from "../StateProvider";
 import Login from "./Login";
 import Post from "./Post";
+import MessageSender from "./MessageSender";
 
 function Feed({ posts }) {
   const [{ user }] = useStateValue();
@@ -15,6 +16,7 @@ function Feed({ posts }) {
         <Login />
       ) : (
         <div className="feed">
+          <MessageSender />
           {posts.map((post, index) => (
             <Post key={"post" + index} post={post} />
           ))}

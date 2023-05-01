@@ -45,7 +45,7 @@ function Navbar({ page, search }) {
   };
 
   const handleDetailsClick = () => {
-    setOpenDialog(true);
+    navigate("/project/" + id + "/details");
   };
 
   return (
