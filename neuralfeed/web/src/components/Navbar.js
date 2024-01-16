@@ -52,7 +52,7 @@ function Navbar({ page, search }) {
     <div className="navbar">
       <div className="navbar__left">
         <Avatar
-          src="/logo.svg"
+          src="/podstream_logo.svg"
           alt="Neural Feed Logo"
           onClick={handleLogoClick}
         />

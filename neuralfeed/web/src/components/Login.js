@@ -47,10 +47,10 @@ function Login() {
   return (
     <div className="login">
       <div className="login__logo">
-        <Avatar src="/logo.svg" alt="Neuralfeed Icon Logo" />
+        <Avatar src="/podstream_logo.svg" alt="PodstreamIcon Logo" />
       </div>
 
-      <h1>NeuralFeed</h1>
+      <h1>Podstream</h1>
 
       <div className="signin">
         <h1>Log in with</h1>

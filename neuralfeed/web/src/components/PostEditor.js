@@ -40,22 +40,7 @@ const PostEditor = () => {
     setValue(content);
   };
 
-  
-
-  return (
-    <div>
-      <ReactQuill
-        value={value}
-        onChange={handleEditorChange}
-        modules={modules}
-        formats={formats}
-      />
-      <div className="messageSender__bottom">
-        <button onClick={handleDiscardClick}>Discard</button>
-        <button onClick={handlePostClick}>Post</button>
-      </div>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default PostEditor;

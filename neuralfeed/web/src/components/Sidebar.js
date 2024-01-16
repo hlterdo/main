@@ -58,7 +58,7 @@ function Sidebar() {
           notImplementedError="Mind map section will show the knowledge graph based on the tags and saved posts."
         />
         <SidebarRow
-          title="Project & Team"
+          title="Pod Info"
           Icon={GroupsIcon}
           active={subpage === "details"}
           navigateTo={"/project/" + id + "/details"}

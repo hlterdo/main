@@ -30,12 +30,12 @@ function ProjectDetails({ details }) {
             </div>
             <div className="projectDetails__sectionHeader">
               <ModeStandbyIcon />
-              <h2>Mission</h2>
+              <h2>Pod Mission</h2>
             </div>
             <p>{details.mission}</p>
             <div className="projectDetails__sectionHeader">
               <GroupsIcon />
-              <h2>Team</h2>
+              <h2>Pod Members</h2>
             </div>
             <div className="projectDetails__users">
               {details.teamMembers.map((teamMember, index) => (

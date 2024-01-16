@@ -15,6 +15,7 @@ import { onSnapshot, collection, query } from "firebase/firestore";
 import db from "../Firebase";
 import { useParams } from "react-router-dom";
 import SchoolIcon from "@mui/icons-material/School";
+import EventIcon from "@mui/icons-material/Event";
 // TODO: Check the keys so that they are actually unique.
 // TODO: Check everything for early returns, login, user.
 
@@ -98,7 +99,7 @@ function Post({ post }) {
           </Avatar>
         )}
 
-        {post.authorType === "botGithubCoder" && (
+        {post.authorType === "botGithubScout" && (
           <Avatar className="post__avatar" sx={{ bgcolor: "brown" }}>
             <GitHubIcon />
           </Avatar>
@@ -107,6 +108,12 @@ function Post({ post }) {
         {post.authorType === "botAcademicExpert" && (
           <Avatar className="post__avatar" sx={{ bgcolor: "darkgreen" }}>
             <SchoolIcon />
+          </Avatar>
+        )}
+
+        {post.authorType === "botSocialButterfly" && (
+          <Avatar className="post__avatar" sx={{ bgcolor: "black" }}>
+            <EventIcon />
           </Avatar>
         )}
 

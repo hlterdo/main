@@ -42,19 +42,35 @@ const AdminPage = () => {
       let authorType = "";
       let authorName = "";
 
-      if (author === "yigit") {
-        authorEmail = "yigit@vela.partners";
-        authorName = "Yigit Ihlamur";
-        authorPhotoURL =
-          "https://lh3.googleusercontent.com/a-/ACB-R5TrbVv0b5x4kA_rf9bL_zOeUqnr4TjWOKASHx1o=s40-p";
-        authorType = "teamMember";
-      }
-
       if (author === "halit") {
         authorEmail = "haliterdogan@gmail.com";
         authorName = "Halit Erdogan";
         authorPhotoURL =
           "https://lh3.googleusercontent.com/ogw/AAEL6sjzqBW49GGP2LpR2Bazxm6YricL9RUP_zHg8NtJ=s32-c-mo";
+        authorType = "teamMember";
+      }
+
+      if (author === "burke") {
+        authorEmail = "burke.atilla@gmail.com";
+        authorName = "Burke Atilla";
+        authorPhotoURL =
+          "https://lh3.googleusercontent.com/a-/ALV-UjUAR8dgepomMHaqvS_EauFkXzMI5R9wdUVnwYjrQQCqdG8I=s64-p-k-rw-no";
+        authorType = "teamMember";
+      }
+
+      if (author === "burak") {
+        authorEmail = "burakarik@gmail.com";
+        authorName = "Burak Arik";
+        authorPhotoURL =
+          "https://lh3.googleusercontent.com/a-/ALV-UjUAjeSXHUQ98RAH41AGkOvTSEVf9sFpI-RZIOFQ2jxeawej=s64-p-k-rw-no";
+        authorType = "teamMember";
+      }
+
+      if (author === "eren") {
+        authorEmail = "eren@entrapeer.com";
+        authorName = "Eren Hukumdar";
+        authorPhotoURL =
+          "https://firebasestorage.googleapis.com/v0/b/neuralfeed-748c8.appspot.com/o/eren.png?alt=media&token=57798b6e-0fd9-4af6-87fa-d72a7f4465dc";
         authorType = "teamMember";
       }
 
@@ -80,6 +96,12 @@ const AdminPage = () => {
         authorEmail = "botacademicexpert@neuralfeed.ai";
         authorName = "Academic Expert";
         authorType = "botAcademicExpert";
+      }
+
+      if (author === "event") {
+        authorEmail = "botsocialbutterfly@neuralfeed.ai";
+        authorName = "Event Hunter";
+        authorType = "botSocialButterfly";
       }
 
       const projectId = "krxaZpoAgVHwOnSxHWKa";
@@ -147,11 +169,14 @@ const AdminPage = () => {
             <select value={author} onChange={(e) => setAuthor(e.target.value)}>
               <option value="">Choose author field</option>
               <option value="halit">Halit</option>
-              <option value="yigit">Yigit</option>
+              <option value="burke">Burke</option>
+              <option value="burak">Burak</option>
+              <option value="eren">Eren</option>
               <option value="github">Github</option>
               <option value="startup">Startup</option>
               <option value="news">News</option>
               <option value="academic">Academic</option>
+              <option value="event">Event</option>
             </select>
           </label>
           <br />

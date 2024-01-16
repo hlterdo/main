@@ -14,7 +14,6 @@ import {
 } from "@mui/material";
 import { collection, addDoc } from "firebase/firestore";
 import db from "../Firebase";
-import PostEditor from "./PostEditor";
 
 function MessageSender({ postId }) {
   const [{ user }] = useStateValue();
@@ -51,17 +50,6 @@ function MessageSender({ postId }) {
     setShowPostEditor(true);
   };
 
-  const handleDiscardClick = () => {
-    setShowShareWithTeam(true);
-    setShowPostEditor(false);
-  };
-
-  const handlePostClick = (quillContent) => {
-    setShowShareWithTeam(true);
-    setShowPostEditor(false);
-    savePost(quillContent);
-  };
-
   return (
     <div className="messageSender">
       <div className="messageSender__top">
@@ -69,14 +57,10 @@ function MessageSender({ postId }) {
         {showShareWithTeam && (
           <input
             onClick={handlePostMessageClick}
-            placeholder="Share with team mates."
+            placeholder="Share with team mates (doesn't work)."
           />
         )}
-        <div className="messageSender__editor">
-          {showPostEditor && <PostEditor />}
-        </div>
       </div>
-      
     </div>
   );
 }
